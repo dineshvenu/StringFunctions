@@ -6,7 +6,7 @@ Console.WriteLine("Hello, World!");
 
 StringFunctions stringFunctions = new StringFunctions();
 
-Console.WriteLine(stringFunctions.FindDuplicateChar("Hello, World!"));
+stringFunctions.FindDuplicateChar1("Hello, World!");
 
 public class StringFunctions
 {
@@ -26,4 +26,31 @@ public class StringFunctions
         }
         return dupChar;
     }
+
+    public void FindDuplicateChar1(string Text)
+    {
+        var chars=new List<char>(); 
+        foreach(char c in Text) { 
+
+            if(Text.IndexOf(c)!=Text.LastIndexOf(c) && !chars.Contains(c))
+            {
+                chars.Add(c);
+            }
+        
+        }
+        Console.WriteLine(string.Join(",", chars));
+
+    }
+
+
+
+    public void FindDuplicateChar2(string s)
+    {
+        var groups = s.GroupBy(c => c).Where(g => g.Count() > 1);
+        foreach (var group in groups)
+        {
+            Console.WriteLine(group.Key);
+        }
+    }
+
 }
