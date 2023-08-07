@@ -2,14 +2,37 @@
 
 using System.Text;
 
-Console.WriteLine("Hello, World!");
+//Console.WriteLine("Hello, World!");
 
 StringFunctions stringFunctions = new StringFunctions();
 
-stringFunctions.FindDuplicateChar1("Hello, World!");
+stringFunctions.UniquwChar("Hello, World!");
 
 public class StringFunctions
 {
+    public void UniquwChar(string s)
+    {
+        string uc =new string(s.Distinct().ToArray());
+        Console.WriteLine(uc);
+        //StringBuilder result = new StringBuilder();
+        //StringBuilder   uc = new StringBuilder();
+        //foreach (char c in s)
+        //{
+        //    if (result.ToString().IndexOf(c.ToString().ToLower()) == -1)
+        //    {
+        //        result.Append(c);
+        //    }
+        //}
+        //Console.WriteLine(result);
+        //var ch=new List<char>();
+
+        //foreach (char c in s)
+        //{
+        //    if(s.IndexOf(c) == s.LastIndexOf(c))
+        //    {  ch.Add(c); }
+        //}
+        //Console.WriteLine
+    }
     public StringBuilder FindDuplicateChar(string Text)
     {
         StringBuilder result = new StringBuilder();
@@ -41,9 +64,6 @@ public class StringFunctions
         Console.WriteLine(string.Join(",", chars));
 
     }
-
-
-
     public void FindDuplicateChar2(string s)
     {
         var groups = s.GroupBy(c => c).Where(g => g.Count() > 1);
@@ -52,5 +72,6 @@ public class StringFunctions
             Console.WriteLine(group.Key);
         }
     }
+   
 
 }
