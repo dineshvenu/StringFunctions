@@ -7,10 +7,48 @@ using static System.Net.Mime.MediaTypeNames;
 
 StringFunctions stringFunctions = new StringFunctions();
 
-stringFunctions.ReverseWords("Hello, World!");
+stringFunctions.Paliandrome("abcddcba");
+//abcddcba  = abcddcba
 
 public class StringFunctions
 {
+    public void Paliandrome(string word)
+    {
+        char[] chars = word.ToCharArray();
+        Array.Reverse(chars);
+       string reverse=new string(chars);
+
+        if (reverse == word)
+            Console.WriteLine("Paliandrome");
+        //string reverse="";
+        //for(int i= word.Length-1;i>=0;i--)
+        //{
+        //    reverse += word[i];
+        //}
+        //if(reverse ==word)
+        //    Console.WriteLine("Paliandrome");
+        //int first = 0;
+        //int lst = word.Length-1;
+        //bool paliandrome = true;
+        //while (lst >= 0) {
+        //    if (word[first] == word[lst])
+        //    {
+        //        paliandrome = true;
+        //    }
+        //    else
+        //    {
+        //        paliandrome = false;
+        //        break;
+        //    }
+
+        //    lst--;
+        //    first++;
+        //}
+        //if (paliandrome)
+        //{
+        //    Console.WriteLine("Paliandrome");
+        //}
+    }
     public void ReverseWords(string originalString)
     {
         StringBuilder sb = new StringBuilder(); 
